@@ -1,16 +1,19 @@
 # -*- coding: utf-8 -*-
-PriLinha = input()
-PriPart = PriLinha.split()
+
+PriPart = input().split()
 PriItem = {
-        "Codigo": PriPart[1],
-        "Quantidade": float(),
-        "Valor": float()
+        "Codigo": int(PriPart[0]),
+        "Quantidade": int(PriPart[1]),
+        "Valor": float(PriPart[2])
 }
-SegLinha = input()
-SegPart = SegLinha.split()
+
+SegPart = input().split()
 SegItem = {
-        "Codigo": int(),
-        "Quantidade": float(),
-        "Valor": float()
+        "Codigo": int(SegPart[0]),
+        "Quantidade": int(SegPart[1]),
+        "Valor": float(SegPart[2])
 }
-print(type(PriPart[1]), type(SegPart[1]))
+
+ValorTotal = (PriItem["Quantidade"] * PriItem["Valor"]) + (SegItem["Quantidade"] * SegItem["Valor"])
+
+print(f"VALOR A PAGAR: R$ {ValorTotal:.2f}") 
